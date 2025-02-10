@@ -1,6 +1,9 @@
-import { MapPin, Home, Building2 } from "lucide-react";
 import { useMemo } from "react";
-
+import download from "../assets/social/download.svg";
+import Location from "../assets/social/location.svg";
+import Commercials from "../assets/social/commerical.svg";
+import Area from "../assets/social/area.svg";
+import icon2 from "../assets/social/Frame 1597884224.svg";
 import img1 from "../assets/Vision/Img1.jfif";
 import img2 from "../assets/Vision/Img2.jfif";
 import img3 from "../assets/Vision/Img3.jfif";
@@ -22,7 +25,7 @@ export default function Commercial() {
         id: "02",
         name: "Shilp Twin Towers",
         img: img2,
-        location: "Gift CityGandhinagar",
+        location: "Gift City, Gandhinagar",
         area: "1725-7835 sq. ft.",
       },
       {
@@ -50,7 +53,7 @@ export default function Commercial() {
         id: "06",
         name: "Shilp Incubation Center",
         img: img6,
-        location: "Gift city",
+        location: "Gift City",
         area: "1000-2000 sq. ft.",
       },
     ],
@@ -59,9 +62,14 @@ export default function Commercial() {
 
   return (
     <div className="max-w-[1400px] mx-auto p-6 sm:p-8 lg:p-10 text-center">
-      <p className="text-[16px] font-montserrat font-normal text-gray-600">
-        Commercial
-      </p>
+      <div className="flex items-center justify-center gap-4 w-full">
+        <div className="w-[300px] h-[1px] bg-gradient-to-l from-[#727272] to-transparent"></div>
+        <p className="text-[16px] font-montserrat font-normal text-gray-600">
+          Commercial
+        </p>
+        <div className="w-[300px] h-[1px] bg-gradient-to-r from-[#727272] to-transparent"></div>
+      </div>
+
       <h1 className="text-[28px] sm:text-[32px] font-montserrat font-normal text-black mt-2">
         Workspaces designed for your success
       </h1>
@@ -74,6 +82,21 @@ export default function Commercial() {
               index % 3 === 1 ? "flex flex-col-reverse" : ""
             }`}
           >
+            <div className={`absolute left-4 top-4 flex flex-col items-center gap-2 ${
+              index % 3 === 1 ? "top-[165px]" : ""
+            }`}>
+              <img
+                src={icon2}
+                alt="Icon"
+                className="w-9 h-9  rounded-full  p-1"
+              />
+              <img
+                src={download}
+                alt="Download"
+                className="w-9 h-9  rounded-full  p-1"
+              />
+            </div>
+
             <img
               src={site.img}
               alt={site.location}
@@ -95,24 +118,32 @@ export default function Commercial() {
                   <p className="font-montserrat font-light text-[14px] leading-[17.07px] tracking-[1%] text-black text-right w-[221px] h-[34px] content-center">
                     {site.location}
                   </p>
-                  <div className="w-6 h-6 rounded-full border border-black flex items-center justify-center">
-                    <MapPin size={18} />
+                  <div className="w-8 h-8 flex items-center justify-center">
+                    <img
+                      src={Location}
+                      alt="Download"
+                      className="w-8 h-8  p-1"
+                    />
                   </div>
                 </div>
                 <div className="flex items-center gap-2 mt-2">
                   <p className="font-montserrat font-light text-[14px] leading-[17.07px] tracking-[1%] text-black text-right w-[221px] h-[34px] content-center">
                     {site.area}
                   </p>
-                  <div className="w-6 h-6 rounded-full border border-black flex items-center justify-center">
-                    <Home size={18} />
+                  <div className="w-8 h-8  flex items-center justify-center">
+                    <img src={Area} alt="Download" className="w-10 h-10 p-1" />
                   </div>
                 </div>
                 <div className="flex items-center gap-2 mt-2">
                   <p className="font-montserrat font-light text-[14px] leading-[17.07px] tracking-[1%] text-black text-right w-[221px] h-[34px] content-center">
                     Commercial
                   </p>
-                  <div className="w-6 h-6 rounded-full border border-black flex items-center justify-center">
-                    <Building2 size={18} />
+                  <div className="w-8 h-8 rounded-full flex items-center justify-center">
+                    <img
+                      src={Commercials}
+                      alt="Download"
+                      className="w-10 h-10 p-1"
+                    />
                   </div>
                 </div>
               </div>

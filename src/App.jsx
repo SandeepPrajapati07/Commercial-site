@@ -8,6 +8,8 @@ import Commercial from './Components/Commerical';
 import BLog from './Components/Blog';
 import Testimonials from './Components/Testimonials';
 
+import WhatsappIcon from './assets/social/Whatsapp.svg';
+
 function App() {
   return (
     <div className="relative min-h-screen bg-[#FFFFFF] text-white flex flex-col overflow-auto">
@@ -16,13 +18,21 @@ function App() {
         <Home />
         <AboutUs />
         <OurService />
-        <Vision /> {/* Added Vision below OurService */}
-        <Commercial/>
-        <BLog/>
-        <Testimonials/>
-
+        <Vision /> 
+        <Commercial />
+        <BLog />
+        <Testimonials />
       </div>
       <Footer />
+
+      <a 
+        href="https://wa.me/yourphonenumber" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="fixed bottom-20 right-[120px] z-50"
+      >
+        <img src={WhatsappIcon} alt="WhatsApp" className="w-10 h-10 drop-shadow-lg hover:scale-110 transition-transform duration-300" />
+      </a>
     </div>
   );
 }
